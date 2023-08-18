@@ -14,7 +14,7 @@ class PaymentFactory(object):
             payment_methods, lambda m: isclass(m) and not isabstract(m))
         for name, _type in implementations:
             if isclass(_type) and issubclass(_type, payment_methods.Payment):
-                self.payment_implementations.update([[name, _type]])
+                self.payment_implementations[name] = _type
 
     def create(self, payment_type: str):
         if payment_type in self.payment_implementations:
