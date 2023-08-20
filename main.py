@@ -3,6 +3,7 @@ from payment_factory import PaymentFactory
 from payment_method import PaymentMethod
 
 
+# Client
 def main():
     # factory = DynamicPaymentFactory()
     # payment = PaymentFactory.create(PaymentMethod.CREDIT_CARD)
