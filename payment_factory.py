@@ -5,8 +5,8 @@ from payment_methods import CreditCardPayment, PayPalPayment, GooglePayPayment
 # Creator
 class PaymentFactory:
     @staticmethod
-    def create(paymentMethod: PaymentMethod):
-        match paymentMethod:
+    def create(payment_method: PaymentMethod):
+        match payment_method:
             case PaymentMethod.CREDIT_CARD:
                 return CreditCardPayment()
             case PaymentMethod.PAYPAL:
@@ -15,5 +15,5 @@ class PaymentFactory:
                 return GooglePayPayment()
             case _:
                 raise ValueError(
-                    f"{paymentMethod} is not currently supported as a payment method."
+                    f"{payment_method} is not currently supported as a payment method."
                 )
